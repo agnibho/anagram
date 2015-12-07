@@ -1,0 +1,41 @@
+          Installation instructions for Anagram
+	  =====================================
+
+What do you need
+----------------
+
+* A C++ compiler (recommended GNU C++ compiler)
+* Qt Library
+
+(To follow the instructions below you will also need gnu make)
+
+Installation steps
+------------------
+
+(The following instructions assume that you are using GNU C++ compiler
+along with the GNU make and you already have QT library installed)
+
+1. Untar the source tarball
+   	 tar -xvf anagram.tar.gz
+
+2. Change to the extracted directory
+   	  cd anagram
+
+3. Build the binaries
+       	  make
+
+4. Install the program
+   	  make install
+
+(The default makefile installs the binaries to the /usr/local/bin
+directory and the dictionary files to the
+/usr/local/share/anagram/dictionary
+directory. To uninstall remove those directories.)
+
+Custom installation
+-------------------
+
+To install Anagram to a custom location you will have to edit the
+makefile. In addition to that you have to edit the find.hpp file in
+the source directory prior to build.
+    	   sed -i find.hpp "s:/usr/local/share/anagram/dictionary:/your/custom/path:"
